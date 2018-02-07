@@ -56,7 +56,7 @@ bot.on('message', message => {
     if (message.content === prefix + "staff"){
         var staff_embed = new Discord.RichEmbed()
             .setTitle("ElityBot | Staff")
-            .addField("» Administration «", "\n  ● Malfanax" + "\n  ● Kenai_FDO")
+            .addField("» Administration «", "\n   ● Malfanax" + "\n  ● Kenai_FDO")
             .addField("» Community Manager «", "\n  ● Shadoune666")
             .addField("» Responsables Modération «", "\n  ● BeZaidHache" + "\n  ● Iromega")
             .addField("» Responsable Host «", "\n● Alpharys")
