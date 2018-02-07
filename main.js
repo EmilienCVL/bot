@@ -17,6 +17,7 @@ bot.on('message', message => {
             .setDescription("[►](1) !help » Pour afficher les commandes." + "\n[►](2) !ip » Adresse du serveur Minecraft." + "\n[►](3) !mumble » Adresse du serveur Mumble." + "\n[►](4) !boutique » Boutique du serveur." + "\n[►](5) !twitter » Le Twitter d'ElityGames." + "\n[►](6) !staff » Le Staff d'ElitGames.")
             .setColor('#F49301')
             message.author.sendEmbed(help_embed);
+            message.delete;
         //message.channel.sendMessage("Voici les commandes du Bot »\n §help » Pour afficher les commandes.")
         console.log("Commande Help Demandée.");
     }
