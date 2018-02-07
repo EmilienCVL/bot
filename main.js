@@ -27,6 +27,7 @@ bot.on('message', message => {
             .setTitle("ElityBot | Minecraft")
             .setDescription("Adresse » mc.elitygames.fr")
             .setColor('#F49301')
+            .setColor()
             message.author.sendEmbed(minecraft_embed);
             message.delete();
     }
@@ -74,6 +75,41 @@ bot.on('message', message => {
             .setColor('#F49301')
             message.author.sendEmbed(staff_embed);
             message.delete();
+    }
+
+    else if (message.content.startsWith(prefix + "purge")){
+        var purge_embed = new DiscordRichEmbed();
+        if (!message.guild.name === "Draxiio" && !message.guild.name === "Chocapic"){
+            purge_embed.setTitle("ElityBot | Purge")
+            .addField("Vous n'avez pas la permission d'éffectuer cette commande.")
+            .setColor('#F49301')
+            message.author.sendEmbed(purge_embed);
+            message.delete();
+            return;
+        }else {
+            var temp = message.content;
+            if(temp.length != 2){
+                purge_embed.setTitle("ElityBot | Purge")
+                .addField("Syntaxe incorrecte : !purge [nombre].")
+                .setColor('#F49301')
+                message.author.sendEmbed(purge_embed);
+                message.delete();
+            }else {
+                var channel = message.channel;
+                message.delete();
+                var nombre = temp.split[1];
+                var i=0;
+                for (i;i<nombre;i++){
+                    channel.messages[i].delete;
+                }
+
+                purge_embed.setTitle("ElityBot | Purge")
+                .addField("Vous avez supprimé " + i + " message(s).")
+                .setColor('#F49301')
+                message.author.sendEmbed(purge_embed);
+            }
+        }
+
     }
 
     
