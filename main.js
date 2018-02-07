@@ -8,7 +8,7 @@ bot.on('ready', () => {
     console.log("ElityBot Ready");
 });
 
-bot.login('Mzg5MTMyODE1MDQxNTYwNTg2.DSXwnA.7VActXvys4mdEURQli8ADvMSeNg');
+bot.login('Mzg5MTMyODE1MDQxNTYwNTg2.DVy9BA.ngCw25Ve55SanUGsmXbxmNFErqA');
 
 bot.on('message', message => {
     if (message.content === prefix + "help"){
