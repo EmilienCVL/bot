@@ -62,19 +62,6 @@ bot.on('message', message => {
             message.channel.sendEmbed(staff_embed);
     }
 
-    if (message.content === prefix + "uhc1235"){
-        var uhc_embed = new Discord.RichEmbed()
-            .setTitle("UHC Classico")
-            .addField("Host »", "\nDraxiio")
-            .addField("Team »", "\n Choosen of 2")
-            .addField("» Scénarios «", "\n► No Rod")
-            .addField("» Règles «", "\/tell » OFF" + "\nBordure » Episode 5" + "\nPvP » 20 Minutes" + "\nLava Bucket & Briquet » OFF" + "\nFire Aspect & Flame » OFF" + "\nStuff Diams » 3 Parties maximum épée comprise")
-            .addField("Serveur »", "\nmc.elitgames.fr")
-            .addField("Mumble »", "\nAdresse ► mumble.elitygames.fr" + "\nPort ► 16300")
-            .setColor('#F49301')
-            message.channel.sendEmbed(uhc_embed);
-    }
-
     
 
 });
