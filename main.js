@@ -44,16 +44,24 @@ bot.on('message', message => {
             .setColor('#F49301')
             message.channel.sendEmbed(boutique_embed);
     }
+    
+    if (message.content === prefix + "twitter"){
+        var boutique_embed = new Discord.RichEmbed()
+            .setTitle("ElityBot | Twitter")
+            .setDescription("Twitter » https://twitter.com/ElityGames")
+            .setColor('#F49301')
+            message.channel.sendEmbed(twitter_embed);
+    }
 
     if (message.content === prefix + "staff"){
         var staff_embed = new Discord.RichEmbed()
             .setTitle("ElityBot | Staff")
-            .addField("» Administration «", "\nMalfanax" + "\nKenai_FDO")
+            .addField("» Administration «", "\n● Malfanax" + "\n● Kenai_FDO")
             .addField("» Community Manager «", "\nShadoune666")
-            .addField("» Responsable Modération «", "\nBeZaidHache" + "\nIromega")
-            .addField("» Responsable Host «", "\nAlpharys")
+            .addField("» Responsables Modération «", "\n● BeZaidHache" + "\n● Iromega")
+            .addField("» Responsable Host «", "\n● Alpharys")
             .addField("» Responsable Build «", "\nbartix2612")
-            .addField("» Modération «", "\nSteyzz" +"\nTorusMC" + "\nDraxiio_EG" + "\nOsheip" + "\nFuzior_Floki" + "\nJinkk" + "\nTobiramaa" + "\nMinato" + "\nFroggyBalboa" + "\nredbull67" + "\nSkydoo" + "\nZiffard")
+            .addField("» Modération «", "\nDraxiio_EG" +"\nOsheip" + "\nTorusMC" + "\nSteyzz" + "\nFuzior_Floki" + "\nJinkk" + "\nTobiramaa" + "\nMinato" + "\nFroggyBalboa" + "\nredbull67" + "\nSkydoo" + "\nZiffard")
             .addField("» Helper «", "\nAdrossiel_" + "\nGold_oO" + "\nOver_Rex" + "\nYysm")
             .addField("» Builder «", "\n__0mega" + "\nLaMieDePain" + "\nLeFauxBelge" + "\nzoryken")
             .addField("» Développeur «", "\n Personne")
