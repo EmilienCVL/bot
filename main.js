@@ -14,7 +14,7 @@ bot.on('message', message => {
     if (message.content === prefix + "help"){
         var help_embed = new Discord.RichEmbed()
             .setTitle("ElityBot | Commandes")
-            .setDescription("[►](1) !help » Pour afficher les commandes." + "\n[►](2) !ip » Adresse du serveur Minecraft." + "\n[►](3) !mumble » Adresse du serveur Mumble." + "\n[►](4) !boutique » Boutique du serveur." + "\n[►](5) !staff » Le Staff d'Elity.")
+            .setDescription("[►](1) !help » Pour afficher les commandes." + "\n[►](2) !ip » Adresse du serveur Minecraft." + "\n[►](3) !mumble » Adresse du serveur Mumble." + "\n[►](4) !boutique » Boutique du serveur." + "\n[►](5) !twitter » Le Twitter d'ElityGames." + "\n[►](6) !staff » Le Staff d'ElitGames.")
             .setColor('#F49301')
             message.channel.sendEmbed(help_embed);
         //message.channel.sendMessage("Voici les commandes du Bot »\n §help » Pour afficher les commandes.")
@@ -24,7 +24,7 @@ bot.on('message', message => {
     if (message.content === prefix + "ip"){
         var minecraft_embed = new Discord.RichEmbed()
             .setTitle("ElityBot | Minecraft")
-            .setDescription("Adresse » mc.elitygames.fr")
+            .setDescription("Adresse » mc.elitygames.fr :heart:")
             .setColor('#F49301')
             message.channel.sendEmbed(minecraft_embed);
     }
