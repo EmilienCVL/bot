@@ -26,7 +26,7 @@ bot.on('message', message => {
             .setTitle("ElityBot | Minecraft")
             .setDescription("Adresse » mc.elitygames.fr")
             .setColor('#F49301')
-            message.channel.sendEmbed(minecraft_embed);
+            message.author.sendEmbed(minecraft_embed);
     }
 
     if (message.content === prefix + "mumble"){
@@ -34,7 +34,7 @@ bot.on('message', message => {
             .setTitle("ElityBot | Mumble")
             .setDescription("Adresse » mumble.elitygames.fr" + "\nPort » 16300")
             .setColor('#F49301')
-            message.channel.sendEmbed(mumble_embed);
+            message.author.sendEmbed(mumble_embed);
     }
 
     if (message.content === prefix + "boutique"){
@@ -42,7 +42,7 @@ bot.on('message', message => {
             .setTitle("ElityBot | Boutique")
             .setDescription("Boutique » http://elity.buycraft.net/")
             .setColor('#F49301')
-            message.channel.sendEmbed(boutique_embed);
+            message.author.sendEmbed(boutique_embed);
     }
     
     if (message.content === prefix + "twitter"){
@@ -50,7 +50,7 @@ bot.on('message', message => {
             .setTitle("ElityBot | Twitter")
             .setDescription("Twitter » https://twitter.com/ElityGames")
             .setColor('#F49301')
-            message.channel.sendEmbed(twitter_embed);
+            message.author.sendEmbed(twitter_embed);
     }
 
     if (message.content === prefix + "staff"){
@@ -67,7 +67,7 @@ bot.on('message', message => {
             .addField("» Développeur «", "\nPersonne")
             .addField("» Graphiste «", "\nPersonne")
             .setColor('#F49301')
-            message.channel.sendEmbed(staff_embed);
+            message.author.sendEmbed(staff_embed);
     }
 
     
