@@ -51,6 +51,7 @@ bot.on('message', message => {
             .setDescription("Twitter » https://twitter.com/ElityGames")
             .setColor('#F49301')
             message.channel.sendEmbed(twitter_embed);
+    }
 
     if (message.content === prefix + "staff"){
         var staff_embed = new Discord.RichEmbed()
