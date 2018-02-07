@@ -28,6 +28,7 @@ bot.on('message', message => {
             .setDescription("Adresse » mc.elitygames.fr")
             .setColor('#F49301')
             message.author.sendEmbed(minecraft_embed);
+            message.delete();
     }
 
     if (message.content === prefix + "mumble"){
@@ -36,6 +37,7 @@ bot.on('message', message => {
             .setDescription("Adresse » mumble.elitygames.fr" + "\nPort » 16300")
             .setColor('#F49301')
             message.author.sendEmbed(mumble_embed);
+            message.delete();
     }
 
     if (message.content === prefix + "boutique"){
@@ -44,6 +46,7 @@ bot.on('message', message => {
             .setDescription("Boutique » http://elity.buycraft.net/")
             .setColor('#F49301')
             message.author.sendEmbed(boutique_embed);
+            message.delete();
     }
     
     if (message.content === prefix + "twitter"){
@@ -52,6 +55,7 @@ bot.on('message', message => {
             .setDescription("Twitter » https://twitter.com/ElityGames")
             .setColor('#F49301')
             message.author.sendEmbed(twitter_embed);
+            message.delete();
     }
 
     if (message.content === prefix + "staff"){
@@ -69,6 +73,7 @@ bot.on('message', message => {
             .addField("» Graphiste «", "\nPersonne")
             .setColor('#F49301')
             message.author.sendEmbed(staff_embed);
+            message.delete();
     }
 
     
