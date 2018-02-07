@@ -44,20 +44,27 @@ bot.on('message', message => {
             .setColor('#F49301')
             message.channel.sendEmbed(boutique_embed);
     }
+    
+    if (message.content === prefix + "twitter"){
+        var twitter_embed = new Discord.RichEmbed()
+            .setTitle("ElityBot | Twitter")
+            .setDescription("Twitter » https://twitter.com/ElityGames")
+            .setColor('#F49301')
+            message.channel.sendEmbed(twitter_embed);
 
     if (message.content === prefix + "staff"){
         var staff_embed = new Discord.RichEmbed()
             .setTitle("ElityBot | Staff")
-            .addField("» Administration «", "\n● Malfanax" + "\n● Kenai_FDO")
-            .addField("» Community Manager «", "\nShadoune666")
-            .addField("» Responsables Modération «", "\n● BeZaidHache" + "\n● Iromega")
+            .addField("» Administration «", "\n ● Malfanax" + "\n ● Kenai_FDO")
+            .addField("» Community Manager «", "\n ● Shadoune666")
+            .addField("» Responsables Modération «", "\n ● BeZaidHache" + "\n ● Iromega")
             .addField("» Responsable Host «", "\n● Alpharys")
-            .addField("» Responsable Build «", "\nbartix2612")
-            .addField("» Modération «", "\nDraxiio_EG" +"\nOsheip" + "\nTorusMC" + "\nSteyzz" + "\nFuzior_Floki" + "\nJinkk" + "\nTobiramaa" + "\nMinato" + "\nFroggyBalboa" + "\nredbull67" + "\nSkydoo" + "\nZiffard")
-            .addField("» Helper «", "\nAdrossiel_" + "\nGold_oO" + "\nOver_Rex" + "\nYysm")
-            .addField("» Builder «", "\n__0mega" + "\nLaMieDePain" + "\nLeFauxBelge" + "\nzoryken")
-            .addField("» Développeur «", "\n Personne")
-            .addField("» Graphiste «", "\n Personne")
+            .addField("» Responsable Build «", "\n ● bartix2612")
+            .addField("» Modération «", "\n ● Draxiio_EG" +"\n ● Osheip" + "\n ● TorusMC" + "\n ● Steyzz" + "\n ● Fuzior_Floki" + "\n ● Jinkk" + "\n ● Tobiramaa" + "\n ● Minato" + "\n ● FroggyBalboa" + "\n ● redbu67600" + "\n ● Skydoo" + "\n ● Ziffard")
+            .addField("» Helper «", "\n ● Adrossiel_" + "\n ● Gold_oO" + "\n ● Over_Rex" + "\n ● Yysm")
+            .addField("» Builder «", "\n ● __0mega" + "\n ● LaMieDePain" + "\n ● LeFauxBelgeTroBo" + "\n ● zoryken")
+            .addField("» Développeur «", "\n ● Personne")
+            .addField("» Graphiste «", "\n ● Personne")
             .setColor('#F49301')
             message.channel.sendEmbed(staff_embed);
     }
