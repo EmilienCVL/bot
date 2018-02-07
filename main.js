@@ -44,14 +44,6 @@ bot.on('message', message => {
             .setColor('#F49301')
             message.channel.sendEmbed(boutique_embed);
     }
-    
-    if (message.content === prefix + "twitter"){
-        var boutique_embed = new Discord.RichEmbed()
-            .setTitle("ElityBot | Twitter")
-            .setDescription("Twitter » https://twitter.com/ElityGames")
-            .setColor('#F49301')
-            message.channel.sendEmbed(twitter_embed);
-    }
 
     if (message.content === prefix + "staff"){
         var staff_embed = new Discord.RichEmbed()
