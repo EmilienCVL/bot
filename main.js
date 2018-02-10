@@ -5,10 +5,10 @@ var prefix = ("!");
 
 bot.on('ready', () => {
     bot.user.setPresence({ game: { name: 'ElityGames | !help', type: 0} });
-    console.log("ElityBot Ready");
+    console.log("ElityBot ✔");
 });
 
-bot.login(process.env.TOKE);
+bot.login(process.env.TOKEN);
 
 bot.on('message', message => {
     if (message.content === prefix + "help"){
@@ -17,7 +17,9 @@ bot.on('message', message => {
             .setDescription("[►](1) !help » Pour afficher les commandes." + "\n[►](2) !ip » Adresse du serveur Minecraft." + "\n[►](3) !mumble » Adresse du serveur Mumble." + "\n[►](4) !boutique » Boutique du serveur." + "\n[►](5) !twitter » Le Twitter d'ElityGames." + "\n[►](6) !staff » Le Staff d'ElitGames.")
             .setColor('#F49301')
             message.author.sendEmbed(help_embed);
-            message.delete();
+            if (message.guild != null){
+                message.delete();
+                }
         //message.channel.sendMessage("Voici les commandes du Bot »\n §help » Pour afficher les commandes.")
         console.log("Commande Help Demandée.");
     }
@@ -27,9 +29,10 @@ bot.on('message', message => {
             .setTitle("ElityBot | Minecraft")
             .setDescription("Adresse » mc.elitygames.fr")
             .setColor('#F49301')
-            .setColor()
             message.author.sendEmbed(minecraft_embed);
-            message.delete();
+            if (message.guild != null){
+                message.delete();
+                }
     }
 
     if (message.content === prefix + "mumble"){
@@ -38,7 +41,9 @@ bot.on('message', message => {
             .setDescription("Adresse » mumble.elitygames.fr" + "\nPort » 16300")
             .setColor('#F49301')
             message.author.sendEmbed(mumble_embed);
-            message.delete();
+            if (message.guild != null){
+                message.delete();
+                }
     }
 
     if (message.content === prefix + "boutique"){
@@ -47,7 +52,9 @@ bot.on('message', message => {
             .setDescription("Boutique » http://elity.buycraft.net/")
             .setColor('#F49301')
             message.author.sendEmbed(boutique_embed);
-            message.delete();
+            if (message.guild != null){
+                message.delete();
+                }
     }
     
     if (message.content === prefix + "twitter"){
@@ -56,7 +63,9 @@ bot.on('message', message => {
             .setDescription("Twitter » https://twitter.com/ElityGames")
             .setColor('#F49301')
             message.author.sendEmbed(twitter_embed);
-            message.delete();
+            if (message.guild != null){
+                message.delete();
+                }
     }
 
     if (message.content === prefix + "staff"){
@@ -67,50 +76,79 @@ bot.on('message', message => {
             .addField("» Responsables Modération «", "\nBeZaidHache" + "\nIromega")
             .addField("» Responsable Host «", "\nAlpharys")
             .addField("» Responsable Build «", "\nbartix2612")
-            .addField("» Modération «", "\nDraxiio_EG" +"\nOsheip" + "\nTorusMC" + "\nSteyzz" + "\nFuzior_Floki" + "\nJinkk" + "\nTobiramaa" + "\nMinato" + "\nFroggyBalboa" + "\nredbu67600" + "\nSkydoo" + "\nZiffard")
+            .addField("» Modération «", "\nDraxiio_EG" +"\nOsheip" + "\nTorusMC" + "\nSteyzz" + "\nFuzior_Floki" + "\nTobiramaa" + "\nMinato" + "\nFroggyBalboa" + "\nredbu67600" + "\nSkydoo" + "\nZiffard")
             .addField("» Helper «", "\nAdrossiel_" + "\nGold_oO" + "\nOver_Rex" + "\nYysm")
             .addField("» Builder «", "\n__0mega" + "\nLaMieDePain" + "\nLeFauxBelgeTroBo" + "\nzoryken")
             .addField("» Développeur «", "\nPersonne")
             .addField("» Graphiste «", "\nPersonne")
             .setColor('#F49301')
             message.author.sendEmbed(staff_embed);
+
+            if (message.guild != null){
             message.delete();
+            }
     }
 
     else if (message.content.startsWith(prefix + "purge")){
-        var purge_embed = new DiscordRichEmbed();
-        if (!message.guild.name === "Draxiio" && !message.guild.name === "Chocapic"){
+        var purge_embed = new Discord.RichEmbed();
+        if (message.guild === null){
             purge_embed.setTitle("ElityBot | Purge")
-            .addField("Vous n'avez pas la permission d'éffectuer cette commande.")
+            .setDescription("Vous devez être sur un putain de discord.")
             .setColor('#F49301')
-            message.author.sendEmbed(purge_embed);
+            message.author.send(purge_embed);
+            return;
+        }
+        let draxiio = message.guild.roles.find("name", "Draxiio");
+        let chocapic = message.guild.roles.find("name", "Chocapic");
+    
+        if (!message.member.roles.has(draxiio.id) && !message.member.roles.has(chocapic.id)){
+            purge_embed.setTitle("ElityBot | Purge")
+            .setDescription("Vous n'avez pas la permission d'effectuer cette commande.")
+            .setColor('#F49301')
+            message.author.send(purge_embed);
             message.delete();
             return;
         }else {
-            var temp = message.content;
-            if(temp.length != 2){
+            async function purge() {
+                
+            
+            var cont = message.content.slice(prefix.length).split(" ");
+            var args = cont.slice(1);
+            if(args[0] === null) {
                 purge_embed.setTitle("ElityBot | Purge")
-                .addField("Syntaxe incorrecte : !purge [nombre].")
+                .setDescription("Syntaxe incorrecte : !purge [nombre].")
                 .setColor('#F49301')
-                message.author.sendEmbed(purge_embed);
+                message.author.send(purge_embed);
                 message.delete();
             }else {
-                var channel = message.channel;
-                message.delete();
-                var nombre = temp.split[1];
-                var i=0;
-                for (i;i<nombre;i++){
-                    channel.messages[i].delete;
+                var nombre = parseInt(args[0]) + 1;
+                if (nombre > 100){
+                    nombre = 100;
                 }
+                if (isNaN(nombre)){
+                    purge_embed.setTitle("ElityBot | Purge")
+                    .setDescription("Syntaxe incorrecte : !purge [nombre].")
+                    .setColor('#F49301')
+                    message.author.send(purge_embed);
+                    message.delete();
+                    return;
+                }
+                var fetched = await message.channel.fetchMessages({limit:nombre});
+                message.channel.bulkDelete(fetched);
+                   
+                
 
                 purge_embed.setTitle("ElityBot | Purge")
-                .addField("Vous avez supprimé " + i + " message(s).")
+                .setDescription("Vous avez supprimé " + fetched.size + " message(s).")
                 .setColor('#F49301')
-                message.author.sendEmbed(purge_embed);
+             message.author.send(purge_embed);
             }
-        }
-
+        } purge();
+        
     }
+
+    
+}
 
     
 
