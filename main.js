@@ -16,7 +16,7 @@ bot.on('message', message => {
             .setTitle("ElityBot | Commandes")
             .setDescription("[►](1) !help » Pour afficher les commandes." + "\n[►](2) !ip » Adresse du serveur Minecraft." + "\n[►](3) !mumble » Adresse du serveur Mumble." + "\n[►](4) !boutique » Boutique du serveur." + "\n[►](5) !twitter » Le Twitter d'ElityGames." + "\n[►](6) !staff » Le Staff d'ElitGames.")
             .setColor('#F49301')
-            message.author.sendEmbed(help_embed);
+            message.author.send(help_embed);
             if (message.guild != null){
                 message.delete();
                 }
@@ -29,7 +29,7 @@ bot.on('message', message => {
             .setTitle("ElityBot | Minecraft")
             .setDescription("Adresse » mc.elitygames.fr")
             .setColor('#F49301')
-            message.author.sendEmbed(minecraft_embed);
+            message.author.send(minecraft_embed);
             if (message.guild != null){
                 message.delete();
                 }
@@ -40,7 +40,7 @@ bot.on('message', message => {
             .setTitle("ElityBot | Mumble")
             .setDescription("Adresse » mumble.elitygames.fr" + "\nPort » 16300")
             .setColor('#F49301')
-            message.author.sendEmbed(mumble_embed);
+            message.author.send(mumble_embed);
             if (message.guild != null){
                 message.delete();
                 }
@@ -51,7 +51,7 @@ bot.on('message', message => {
             .setTitle("ElityBot | Boutique")
             .setDescription("Boutique » http://elity.buycraft.net/")
             .setColor('#F49301')
-            message.author.sendEmbed(boutique_embed);
+            message.author.send(boutique_embed);
             if (message.guild != null){
                 message.delete();
                 }
@@ -62,7 +62,7 @@ bot.on('message', message => {
             .setTitle("ElityBot | Twitter")
             .setDescription("Twitter » https://twitter.com/ElityGames")
             .setColor('#F49301')
-            message.author.sendEmbed(twitter_embed);
+            message.author.send(twitter_embed);
             if (message.guild != null){
                 message.delete();
                 }
@@ -82,7 +82,7 @@ bot.on('message', message => {
             .addField("» Développeur «", "\nPersonne")
             .addField("» Graphiste «", "\nPersonne")
             .setColor('#F49301')
-            message.author.sendEmbed(staff_embed);
+            message.author.send(staff_embed);
 
             if (message.guild != null){
             message.delete();
